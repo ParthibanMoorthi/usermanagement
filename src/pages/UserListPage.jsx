@@ -37,10 +37,11 @@ export default function UserListPage() {
 
   const filteredUsers = list.filter(
     (user) =>
-      user.first_name?.toLowerCase()?.includes(searchTerm?.toLowerCase()) ||
-      user.last_name?.toLowerCase()?.includes(searchTerm?.toLowerCase()) ||
-      user.email?.toLowerCase()?.includes(searchTerm?.toLowerCase())
+      user.first_name?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
+      user.last_name?.toLowerCase().includes(searchTerm?.toLowerCase()) ||
+      user.email?.toLowerCase().includes(searchTerm?.toLowerCase())
   );
+
 
   const totalPages = Math.max(1, Math.ceil(filteredUsers.length / usersPerPage));
   const indexOfLastUser = currentPage * usersPerPage;
